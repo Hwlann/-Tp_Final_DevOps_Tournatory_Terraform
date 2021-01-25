@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('Init') {
             steps {
-                sh 'terraform init'
+                sh 'terraform init -backend-config=backend.tfvars'
             }
         }
         stage('Plan') {
@@ -29,6 +29,11 @@ pipeline {
            steps {
               sh 'terraform apply -auto-approve'
            }
+        }
+        stage('output') {
+            steps {
+                sh 'terraform output ip_address'
+            }
         }
     }
 }
