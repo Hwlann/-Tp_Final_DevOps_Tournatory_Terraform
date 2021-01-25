@@ -1,3 +1,3 @@
-bucket = "<nom_bucket>"
-key    = "instances_<nom_famille>.tfstate"
+bucket = var.bucket
+key    = "instances_tournatory.tfstate"
 region = "eu-west-3"
