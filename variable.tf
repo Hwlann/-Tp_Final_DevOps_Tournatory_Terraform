@@ -24,7 +24,7 @@ variable "region" {
 variable "instance_type" {
   type = string
   description = "Instance type"
-  default = "t2.large"
+  default = "t2.micro"
 }
 
 variable "instance_number" {
