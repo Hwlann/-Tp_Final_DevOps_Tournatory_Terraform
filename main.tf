@@ -22,7 +22,7 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_instance" "security_group_instances_loic" {
+resource "aws_instance" "security_group_instances_tournatory" {
   count         = var.create_instance ? var.instance_number : 0
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
@@ -32,8 +32,9 @@ resource "aws_instance" "security_group_instances_loic" {
     Name = var.instance_name
   }
 }
-resource "aws_security_group" "security_group_instances_loic" {
-    name = "security_group_instances_loic"
+
+resource "aws_security_group" "security_group_instances_tournatory" {
+    name = "security_group_instances_tournatory"
 
  ingress {
      from_port   = 22
